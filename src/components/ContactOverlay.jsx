@@ -38,7 +38,7 @@ export default function ContactOverlay({ open, setOpen }) {
               >
                 Contact Information
               </h3>
-              <p className="text-gray-300">Phone: <span className="text-white font-medium">+91 6361253544 | | 7411089029 </span></p>
+              <p className="text-gray-300">Phone: <span className="text-white font-medium">+91 6361253544 / 7411089029 </span></p>
               <p className="text-gray-300">Email: <span className="text-white font-medium">prasiddhiconstructions28@gmail.com</span></p>
             </div>
 

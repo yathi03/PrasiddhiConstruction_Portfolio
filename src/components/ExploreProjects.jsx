@@ -7,22 +7,35 @@ import service3 from "../assets/service3.jpg";
 import service4 from "../assets/service4.jpg";
 import service5 from "../assets/service5.jpg";
 import service6 from "../assets/service6.jpg";
+import service7 from "../assets/service7.jpg";
+import service8 from "../assets/service8.jpg";
+import service9 from "../assets/service9.jpg";
+import service10 from "../assets/service10.jpg";
+import service11 from "../assets/service11.jpg";
+import service12 from "../assets/service12.jpg";
+import service13 from "../assets/service13.jpg";
+import service14 from "../assets/service14.jpg";
+import service15 from "../assets/service15.jpg";
+import service16 from "../assets/service16.jpg";
+import service17 from "../assets/service17.jpg";
+
+
 
 const projectCategories = [
   {
     title: "Residential Projects",
     description: "Elegant, comfortable homes designed with precision.",
-    images: [service1, service2],
+    images: [service2,service7,service8,service9],
   },
   {
     title: "Interior Design Projects",
     description: "Stylish and modern interior spaces with premium finishes.",
-    images: [service3, service4],
+    images: [service3, service4,service10,service11,service12,service13,service14,service15,service16],
   },
   {
     title: "Renovation Projects",
     description: "Transforming old spaces into modern masterpieces.",
-    images: [service5, service6],
+    images: [service5, service6,service17,service1],
   },
 ];
 

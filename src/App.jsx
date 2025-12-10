@@ -31,12 +31,13 @@ function App() {
         <section id="projects">
           <ExploreProjects />
         </section>
+
+        <section id="contact">
+          <ContactOverlay open={contactOpen} setOpen={setContactOpen} />
+        </section>
       </main>
 
       <Footer />
-
-      {/* Contact Overlay */}
-      <ContactOverlay open={contactOpen} setOpen={setContactOpen} />
     </div>
   );
 }

@@ -18,23 +18,24 @@ export default function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm font-inter">
-            <li><a href="#" className="hover:text-white transition">Home</a></li>
-            <li><a href="#" className="hover:text-white transition">About Us</a></li>
-            <li><a href="#" className="hover:text-white transition">Projects</a></li>
-            <li><a href="#" className="hover:text-white transition">Contact</a></li>
-          </ul>
+          <li><a href="#home" className="hover:text-white transition">Home</a></li>
+          <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+          <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
+          <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+        </ul>
+
         </div>
 
-        {/* Services */}
+        {/* Services */}     
         <div>
           <h3 className="text-white text-lg font-semibold font-poppins mb-4">
             Our Services
           </h3>
           <ul className="space-y-2 text-sm font-inter">
-            <li><a href="#" className="hover:text-white transition">Residential Construction</a></li>
-            <li><a href="#" className="hover:text-white transition">Commercial Buildings</a></li>
-            <li><a href="#" className="hover:text-white transition">Renovations</a></li>
-            <li><a href="#" className="hover:text-white transition">Project Management</a></li>
+            <li><a href="" className="hover:text-white transition">Residential Construction</a></li>
+            <li><a href="" className="hover:text-white transition">Commercial Buildings</a></li>
+            <li><a href="" className="hover:text-white transition">Renovations</a></li>
+            <li><a href="" className="hover:text-white transition">Project Management</a></li>
           </ul>
         </div>
 
@@ -45,8 +46,8 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2 text-sm font-inter">
             <li>Ballari</li>
-            <li>91+111222334455</li>
-            <li>PrasiddhiConstruction.com</li>
+            <li>91+ 6361253544 / 7411089029 </li>
+            <li>prasiddhiconstructions@gmail.com</li>
           </ul>
 
           {/* Social Icons */}
