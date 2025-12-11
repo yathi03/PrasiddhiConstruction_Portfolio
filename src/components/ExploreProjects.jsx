@@ -16,8 +16,11 @@ import service12 from "../assets/service12.jpg";
 import service13 from "../assets/service13.jpg";
 import service14 from "../assets/service14.jpg";
 import service15 from "../assets/service15.jpg";
-import service16 from "../assets/service16.jpg";
 import service17 from "../assets/service17.jpg";
+import service18 from "../assets/service18.jpg";
+import service19 from "../assets/service19.jpg";
+import service20 from "../assets/service20.jpg";
+
 
 
 
@@ -25,17 +28,17 @@ const projectCategories = [
   {
     title: "Residential Projects",
     description: "Elegant, comfortable homes designed with precision.",
-    images: [service2,service7,service8,service9],
+    images: [service18,service2,service7,service8,service9,service19],
   },
   {
     title: "Interior Design Projects",
     description: "Stylish and modern interior spaces with premium finishes.",
-    images: [service3, service4,service10,service11,service12,service13,service14,service15,service16],
+    images: [service3, service4,service10,service11,service12,service13,service14,service15],
   },
   {
     title: "Renovation Projects",
     description: "Transforming old spaces into modern masterpieces.",
-    images: [service5, service6,service17,service1],
+    images: [service5, service6,service17,service1,service20],
   },
 ];
 
