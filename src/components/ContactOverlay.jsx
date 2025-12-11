@@ -50,7 +50,8 @@ export default function ContactOverlay({ open, setOpen }) {
                 Address
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Ground Floor, No-6,Jai Shree Ram Building, ParvathiNagar Main Rd, Parvathi Nagar, Ballari, Karnataka 583103<br />
+                Beside domino's pizza,
+              ParvathiNagar Main Rd,Ballari, Karnataka 583103<br />
               </p>
             </div>
           </div>
@@ -64,7 +65,7 @@ export default function ContactOverlay({ open, setOpen }) {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240.694920796545!2d76.92355251462835!3d15.151822707962568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb7117caa4b6069%3A0xee4f6a9cdcddde19!2sDomino&#39;s%20Pizza%20Bellari!5e0!3m2!1sen!2sin!4v1764952490770!5m2!1sen!2sin"/>
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3851.120327571969!2d76.92084287511699!3d15.151735085402548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDA5JzA2LjMiTiA3NsKwNTUnMjQuMyJF!5e0!3m2!1sen!2sin!4v1765461957335!5m2!1sen!2sin"/>
           </div>
 
         </div>

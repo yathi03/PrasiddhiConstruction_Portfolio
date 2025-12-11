@@ -43,8 +43,8 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2 text-sm font-inter">
             <li>
-              Office Address: Ground Floor, No-6, Jai Shree Ram Building,
-              ParvathiNagar Main Rd, Parvathi Nagar, Ballari, Karnataka 583103
+              Office Address : Beside domino's pizza,
+              ParvathiNagar Main Rd,Ballari, Karnataka 583103
             </li>
             <li>Contact info: 91+ 6361253544 / 7411089029</li>
             <li>prasiddhiconstructions@gmail.com</li>
