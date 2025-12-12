@@ -86,7 +86,7 @@ export default function AboutUs() {
                 License
               </span>
               <span className="text-gray-700 font-medium">
-                Certified Construction License
+                Certified Construction License.
               </span>
             </div>
           </div>
