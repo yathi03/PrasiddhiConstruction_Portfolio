@@ -49,8 +49,8 @@ export default function AboutUs() {
               className="text-gray-700 leading-relaxed"
               style={{ fontFamily: "'Roboto', sans-serif" }}
             >
-              Founded in 2024, we have been delivering exceptional construction 
-              and interior solutions for the last 2 years. 
+              Founded in 2022, we have been delivering exceptional construction 
+              and interior solutions for the last 4 years. 
               Our mission is to build inspiring, durable spaces using modern 
               techniques and sustainable practices.  
               With a passionate team of experts, every project is handled 
