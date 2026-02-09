@@ -1,5 +1,5 @@
-// src/components/ExploreProjects.jsx
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import service1 from "../assets/service1.jpg";
 import service2 from "../assets/service2.jpg";
@@ -21,119 +21,149 @@ import service18 from "../assets/service18.jpg";
 import service19 from "../assets/service19.jpg";
 import service20 from "../assets/service20.jpg";
 
-
-
-
 const projectCategories = [
   {
     title: "Residential Projects",
     description: "Elegant, comfortable homes designed with precision.",
-    images: [service18,service2,service7,service8,service9,service19],
+    images: [service18, service2, service7, service8, service9, service19],
   },
   {
     title: "Interior Design Projects",
     description: "Stylish and modern interior spaces with premium finishes.",
-    images: [service3, service4,service10,service11,service12,service13,service14,service15],
+    images: [
+      service3,
+      service4,
+      service10,
+      service11,
+      service12,
+      service13,
+      service14,
+      service15,
+    ],
   },
   {
     title: "Renovation Projects",
     description: "Transforming old spaces into modern masterpieces.",
-    images: [service5, service6,service17,service1,service20],
+    images: [service5, service6, service17, service1, service20],
   },
 ];
+
+const textVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function ExploreProjects() {
   const [activeCategory, setActiveCategory] = useState(null);
 
-  // Prevent background scroll when overlay is open
   useEffect(() => {
-    if (activeCategory) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = activeCategory ? "hidden" : "";
+    return () => {
       document.body.style.overflow = "";
-    }
+    };
   }, [activeCategory]);
 
   return (
-    <section className="relative w-full py-20 px-6 lg:px-16">
-      {/* Title */}
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2
-          className="text-3xl sm:text-4xl font-bold text-black drop-shadow-lg"
-          style={{ fontFamily: "'Poppins', sans-serif" }}
-        >
-          Explore Our Projects
-        </h2>
-        <p className="text-gray-600 mt-2 text-lg">
-          Discover our craftsmanship across multiple project categories.
-        </p>
-      </div>
+    <>
+      {/* MAIN SECTION */}
+      <section className="py-20 px-4 lg:px-10 bg-white">
+      <h2
+        className="text-3xl sm:text-4xl font-bold text-black mb-12 drop-shadow-lg text-center"
+        style={{ fontFamily: "'Poppins', sans-serif" }}
+      >
+        Explore Projects
+      </h2>
 
-      {/* Project Category Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {projectCategories.map((category) => (
-          <div
-            key={category.title}
-            onClick={() => setActiveCategory(category)}
-            className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 cursor-pointer"
-          >
-            <img
-              src={category.images[0]}
-              alt={category.title}
-              className="w-full h-64 object-cover"
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-            />
+        <div className="max-w-7xl mx-auto space-y-20">
+          {projectCategories.map((category, index) => (
+            <div
+              key={category.title}
+              className={`flex flex-col lg:flex-row ${
+                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              } items-center gap-12`}
+            >
+              {/* Image */}
+              <div
+                onClick={() => setActiveCategory(category)}
+                className="lg:w-1/2 w-full overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+              >
+                <img
+                  src={category.images[0]}
+                  alt={category.title}
+                  className="w-full h-[420px] object-cover hover:scale-105 transition duration-500"
+                />
+              </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              {/* Animated Text Content */}
+              <motion.div
+                className="lg:w-1/2 w-full text-left"
+                variants={textVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+              >
+                <h3 className="text-3xl font-bold text-gray-900">
+                  {category.title}
+                </h3>
 
-            <div className="absolute bottom-4 left-4 z-10">
-              <h3 className="text-2xl font-semibold text-white drop-shadow-lg">
-                {category.title}
-              </h3>
-              <p className="text-white/90 mt-1 drop-shadow-md">
-                {category.description}
-              </p>
+                <p className="text-gray-600 mt-4 text-lg leading-relaxed">
+                  {category.description}
+                </p>
+
+                <button
+                  onClick={() => setActiveCategory(category)}
+                  className="mt-6 px-8 py-3 bg-black text-white rounded-full text-sm tracking-wide hover:bg-gray-800 transition"
+                >
+                  Explore Gallery
+                </button>
+              </motion.div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Overlay Gallery */}
+      {/* GALLERY MODAL */}
       {activeCategory && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex flex-col items-center p-6 overflow-auto animate-fadeIn">
-          {/* Close Button */}
-          <button
-            onClick={() => setActiveCategory(null)}
-            className="fixed top-6 right-6 text-white text-4xl font-bold hover:text-red-500 transition z-50"
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="bg-white max-w-6xl w-full rounded-2xl p-6 relative overflow-y-auto max-h-[90vh]"
           >
-            &times;
-          </button>
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveCategory(null)}
+              className="absolute top-4 right-4 text-2xl font-bold text-black"
+            >
+              ✕
+            </button>
 
-          <h3
-            className="text-3xl font-bold text-white mt-10 drop-shadow-lg"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            {activeCategory.title}
-          </h3>
+            <h2 className="text-3xl font-bold mb-6">
+              {activeCategory.title}
+            </h2>
 
-          {/* Images */}
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
-            {activeCategory.images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`${activeCategory.title} ${index + 1}`}
-                className="w-full h-80 object-cover rounded-lg shadow-xl transform transition-all duration-300 hover:scale-105"
-                loading="lazy"
-                decoding="async"
-                fetchpriority="low"
-              />
-            ))}
-          </div>
+            {/* Gallery */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {activeCategory.images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`${activeCategory.title} ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              ))}
+            </div>
+          </motion.div>
         </div>
       )}
-    </section>
+    </>
   );
 }
